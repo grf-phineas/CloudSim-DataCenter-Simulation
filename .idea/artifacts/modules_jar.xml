@@ -1,0 +1,11 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="modules:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/modules_jar</output-path>
+    <root id="archive" name="modules.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="extracted-dir" path="D:/Environment/Maven/maven_repository/org/apache/commons/commons-math3/3.3/commons-math3-3.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
