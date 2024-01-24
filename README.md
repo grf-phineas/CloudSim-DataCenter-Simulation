@@ -1,39 +1,32 @@
-# CloudSim: A Framework For Modeling And Simulation Of Cloud Computing Infrastructures And Services #
+# Study and Implementation of Resource  Scheduling in Cloud Database #
 
-Cloud computing is the leading approach for delivering reliable, secure, fault-tolerant, sustainable, and scalable computational services. Hence timely, repeatable, and controllable methodologies for performance evaluation of new cloud applications and policies before their actual development are reqruied. Because utilization of real testbeds limits the experiments to the scale of the testbed and makes the reproduction of results an extremely difficult undertaking, simulation may be used.
+In this project, I utilized the currently popular cloud computing environment simulation framework, CloudSim, to validate the effectiveness of algorithms. The project implements ACO (Ant Colony Optimization), PSO (Particle Swarm Optimization), FCFS (First-Come, First-Served), SJF (Shortest Job First), Greedy algorithms, and a hybrid algorithm within the CloudSim framework. The main innovations lie in the implementation of ACO and PSO, as well as the fusion algorithm combining SJF with the Greedy algorithm. Additionally, the project extends the functionality of CloudSim by visualizing the utilization of CPU and RAM in data center servers.
 
-CloudSim goal is to provide a generalized and extensible simulation framework that enables modeling, simulation, and experimentation of emerging Cloud computing infrastructures and application services, allowing its users to focus on specific system design issues that they want to investigate, without getting concerned about the low level details related to Cloud-based infrastructures and services.
+# To Run This Project
 
-CloudSim is developed in [the Cloud Computing and Distributed Systems (CLOUDS) Laboratory](http://cloudbus.org/), at [the Computer Science and Software Engineering Department](http://www.csse.unimelb.edu.au/) of [the University of Melbourne](http://www.unimelb.edu.au/).
+1. Git Clone
 
-More information can be found on the [CloudSim's web site](http://cloudbus.org/cloudsim/).
+   ```shell
+   git clone https://github.com/grf-phineas/CloudSim-DataCenter-Simulation.git
+   ```
 
-
-# Main features #
-
-  * support for modeling and simulation of large scale Cloud computing data centers
-  * support for modeling and simulation of virtualized server hosts, with customizable policies for provisioning host resources to virtual machines
-  * support for modeling and simulation of application containers
-  * support for modeling and simulation of energy-aware computational resources
-  * support for modeling and simulation of data center network topologies and message-passing applications
-  * support for modeling and simulation of federated clouds
-  * support for dynamic insertion of simulation elements, stop and resume of simulation
-  * support for user-defined policies for allocation of hosts to virtual machines and policies for allocation of host resources to virtual machines
+2. Run algorithmSelect.java
 
 
-# Download #
+# Abstract #
 
-The downloaded package contains all the source code, examples, jars, and API html files.
+With the widespread use of cloud-native databases, more and more enterprises are placing their databases in data centers of cloud service providers. However, cloud service providers find it difficult to provide reliable guarantees for the service quality of cloud databases. Reasonable resource scheduling for databases can minimize the completion time and average waiting time of tasks, which can improve the service quality of cloud databases to some extent.
 
-# Publications #
+First, this thesis analyzes the current research status of cloud resource scheduling at home and abroad. It introduces the origin and development of TPC mixed workload and briefly explains the usage principle of the mainstream open-source cloud computing simulation framework, CloudSim. The paper also presents the two mainstream scheduling algorithms: heuristic algorithms and deep reinforcement learning algorithms. The advantages and disadvantages of these two algorithms are analyzed. Furthermore, the resource scheduling problem of cloud-native databases is discussed, which focuses on the rational allocation of query transactions to virtual machines in different data centers for resource scheduling. To address this problem, the paper proposes the use of heuristic algorithms, which are characterized by fast solving speed and real-time scheduling capabilities. For small-scale problems, heuristic algorithms can quickly find a suboptimal solution within an acceptable time frame. The specific heuristic algorithms implemented in this paper include particle swarm optimization, ant colony optimization, and greedy algorithm. In particular, the greedy algorithm is combined with the Shortest Job First (SJF) algorithm, which achieves excellent performance in terms of both maximum completion time and average response time.
 
-  * Anton Beloglazov, and Rajkumar Buyya, [Optimal Online Deterministic Algorithms and Adaptive Heuristics for Energy and Performance Efficient Dynamic Consolidation of Virtual Machines in Cloud Data Centers](http://beloglazov.info/papers/2012-optimal-algorithms-ccpe.pdf), Concurrency and Computation: Practice and Experience, Volume 24, Number 13, Pages: 1397-1420, John Wiley & Sons, Ltd, New York, USA, 2012.
-  * Saurabh Kumar Garg and Rajkumar Buyya, [NetworkCloudSim: Modelling Parallel Applications in Cloud Simulations](http://www.cloudbus.org/papers/NetworkCloudSim2011.pdf), Proceedings of the 4th IEEE/ACM International Conference on Utility and Cloud Computing (UCC 2011, IEEE CS Press, USA), Melbourne, Australia, December 5-7, 2011.
-  * **Rodrigo N. Calheiros, Rajiv Ranjan, Anton Beloglazov, Cesar A. F. De Rose, and Rajkumar Buyya, [CloudSim: A Toolkit for Modeling and Simulation of Cloud Computing Environments and Evaluation of Resource Provisioning Algorithms](http://www.buyya.com/papers/CloudSim2010.pdf), Software: Practice and Experience (SPE), Volume 41, Number 1, Pages: 23-50, ISSN: 0038-0644, Wiley Press, New York, USA, January, 2011. (Preferred reference for CloudSim)**
-  * Bhathiya Wickremasinghe, Rodrigo N. Calheiros, Rajkumar Buyya, [CloudAnalyst: A CloudSim-based Visual Modeller for Analysing Cloud Computing Environments and Applications](http://www.cloudbus.org/papers/CloudAnalyst-AINA2010.pdf), Proceedings of the 24th International Conference on Advanced Information Networking and Applications (AINA 2010), Perth, Australia, April 20-23, 2010.
-  * Rajkumar Buyya, Rajiv Ranjan and Rodrigo N. Calheiros, [Modeling and Simulation of Scalable Cloud Computing Environments and the CloudSim Toolkit: Challenges and Opportunities](http://www.cloudbus.org/papers/CloudSim-HPCS2009.pdf), Proceedings of the 7th High Performance Computing and Simulation Conference (HPCS 2009, ISBN: 978-1-4244-4907-1, IEEE Press, New York, USA), Leipzig, Germany, June 21-24, 2009.
+In order to demonstrate the effectiveness of the proposed algorithm in this paper, we used two benchmark algorithms: a fusion algorithm of sequential scheduling algorithm and First Come First Serve (FCFS) algorithm, and a fusion algorithm of sequential scheduling algorithm and Shortest Job First (SJF) algorithm. The experiments were conducted in the CloudSim cloud simulation environment, with maximum completion time and average response time as the metrics. The experimental results show that the proposed greedy algorithm combined with SJF achieves the best performance in terms of scheduling efficiency. Ant colony and particle swarm heuristic algorithms follow, both outperforming the traditional sequential scheduling algorithm.
 
+# Reference
 
+[1]Shao K, Song Y, Wang B. PGA: A New Hybrid PSO and GA Method for Task Scheduling with Deadline Constraints in Distributed Computing[J]. Mathematics, 2023, 11(6): 1548.
 
+[2]Guo L, Zhao S, Shen S, et al. Task scheduling optimization in cloud computing based on heuristic algorithm[J]. Journal of networks, 2012, 7(3): 547.
 
-[![](http://www.cloudbus.org/logo/cloudbuslogo-v5a.png)](http://cloudbus.org/)
+[3]Tawfeek M A, El-Sisi A, Keshk A E, et al. Cloud task scheduling based on ant colony optimization[C]//2013 8th international conference on computer engineering & systems (ICCES). IEEE, 2013: 64-69.
+
+[4]Zhang Y, Sun J, Zhu J. An effective heuristic for due-date-constrained bag-of-tasks scheduling problem for total cost minimization on hybrid clouds[C]//2016 International Conference on Progress in Informatics and Computing (PIC). IEEE, 2016: 479-486.
